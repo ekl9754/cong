@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>콩카페</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="css/sub-4.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/aos.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />  
+   
+   
+    
+    
+    <script>
+        $(function(){
+            $("header").load("header.html");
+            $("footer").load("footer.html");
+          
+    //FAQ
+	       $('.faq_main_txt').click(function(){
+				$('.faq_sub_txt').slideUp();
+				$(this).next().slideDown();
+			});
+            
+    //scorll-Top        
+       $(window).scroll(function(){
+                if($(this).scrollTop()>=500){
+                    $("#top").fadeIn();
+                    
+                }else{
+                    $("#top").fadeOut();
+                }
+            });
+            $("#top").click(function(){
+                $('html,body').animate({scrollTop:0},1000);
+            });
+   
+
+       });
+    
+        
+          
+    </script>
+
+    <style>
+@media all and (max-width:1610px){ 
+    #menu>ul{width: 65%; padding-left: 200px; }
+} 
+@media all and (max-width:1588px){ 
+    .footer_m>ul>li:nth-child(1){margin-left: 2% !important}
+}
+@media all and (max-width:1500px){ 
+    #menu>ul{width: 50%; padding-left: 200px; }
+}   
+@media all and (min-width:768px) and (max-width:1499px){
+    #menu>ul{display:none;}
+    #right_menu{right: 77px !important;}
+    #right_menu>ul{display: none;}
+    #right_menu>.menu_icon{display: block !important;}
+    #logo{margin-left: 50px;}
+    .main_col{margin: 0 !important; margin-left: 7% !important;}
+    .col{width: 20%; margin-right: 0 !important;}
+    .back>.inner>p{font-size: 15px;}
+    .new-item{width: 90%;}
+    .new-item>ul>li{margin-left: 1%;}
+    .footer_m>ul>li{margin-right: 2% !important; width: 12% !important; font-size: 12px !important;}
+    .footer_m>ul>li:nth-child(1){margin-left: 0 !important}
+    .footer_m{padding-bottom: 30px !important;}
+}
+@media screen and (max-width:767px){
+    #menu>ul{display: none;}
+    #right_menu{right: 88px !important;}
+    #right_menu>ul{display: none;}
+    #logo{margin-left: 25px !important;}
+    #right_menu>.menu_icon{display: block !important ;}
+    #right_menu{margin-right: -30px;}
+    #big_menu{width: 140px !important; margin-left: 20px !important; font-size:12px;}
+    #small_menu{width: 140px !important; padding-left: 20px !important; font-size: 12px}
+    .media_intro{font-size: 30px;}
+    p.store_ment{line-height: 250px; font-size: 18px;}
+    p.new{padding-top: 60px; font-size: 24px;}
+    .main_store1{margin-top: 40px;}
+    i.fas{font-size: 50px; top: 55px;}
+    p.store_address{font-size: 14px; top: 139px;}
+    p.store_phone{font-size: 14px; margin-top: 176px;}
+    p.store_time{font-size: 14px; margin-top: 10px;}
+    #sub_store{height: 777px;}
+    .sub_store1{width:50%; height: 250px;}
+    .sub_store2{width: 50%; left: 50%; height: 250px;}
+    .sub_store3{width: 50%; margin-top: 250px; margin-left: 0; height: 250px;}
+    .sub_store4{width: 50%; left: 50%; height: 250px; top: 377px;}
+    .sub_store5{width: 50%; height: 250px; margin-left: 0; top: 627px;}
+    .sub_store6{width: 50%; height: 250px; margin-left: 50%; top: 627px;}
+    #vision{height: 370px;}
+    p.vision_ment{font-size: 12px;}
+    .vision_icon>ul>li>img{max-width: 55%;}
+    .vision_subtxt{font-size: 14px;}
+    #faq{height: 445px;}
+    .faq_main_txt{line-height: 0; font-size: 14px; padding: 35px 10px 18px 70px; background-size: 27px; height: 66px;}
+    .faq_sub_txt{line-height: 17px; padding: 18px 10px 18px 70px; font-size: 11px;}
+    #keyimage{background-position: 0;}
+#top{bottom: 45px !important; right: 25px !important;}
+.footer_m{display: none;}
+.footer_logo{display: none;} 
+#footer{width: 100% !important; text-align: center; padding: 10px;}
+footer{padding-top: 20px; width: 100% !important}
+.ex2{display: none;}
+address{margin-left: 0 !important; position: inherit !important; font-size: 14px !important; margin-top: 20px !important;}
+}
+        
+    </style>
+
+</head>
+<body>
+    <header></header>
+    
+    
+        <div id="keyimage">
+           <div class="media_intro">
+               <p>매장안내</p>
+           </div>         
+        </div>
+   
+        <div class="quick">
+            <div class="quick-in">
+                <a href="index.html"><div class="home_button"></div></a>
+            </div>
+            
+            <select name="big" id="big_menu">
+                <option value="CONGCAFE">CONGCAFE</option>
+                <option value="COFFEE">COFFEE</option>
+                <option value="NEWS">NEWS</option>
+                <option selected value="STORE">STORE</option>
+                <option value="COMMUNITY">COMMUNITY</option>
+            </select>
+            
+            <select name="big" id="small_menu">
+                <option value="매장안내">매장안내</option>
+                <option value="매장찾기">매장찾기</option>
+            </select>
+        </div>  
+
+        <section id="sub_store">
+           <p class="new">STORE INFORMATION</p>
+            <div class="main_store1">
+                <div class="sub_store1">
+                    <p class="store_ment">연남점</p>
+                    <i class="fas fa-map-marker-alt show"></i>
+                    <p class="store_address show">서울 마포구 성미산로 161-14</p>
+                    <p class="store_phone show">070-4131-0333</p>
+                    <p class="store_time show">매일 11:00 - 23:00</p>
+                </div>
+                
+                <div class="sub_store2">
+                    <p class="store_ment">판교점</p>
+                    <i class="fas fa-map-marker-alt show"></i>
+                    <p class="store_address show">경기 성남시 분당구 판교역로146번길 20</p>
+                    <p class="store_phone show">031-5170-1073</p>
+                    <p class="store_time show">매일 10:30 - 20:00</p>
+                </div>
+                
+                <div class="sub_store3">
+                    <p class="store_ment">신도림점</p>
+                    <i class="fas fa-map-marker-alt show"></i>
+                    <p class="store_address show">서울 구로구 경인로 662</p>
+                    <p class="store_phone show">02-2210-9764</p>
+                    <p class="store_time show">매일 11:30 - 21:30</p>
+                </div>
+            </div>
+            
+            <div class="main_store2">
+                <div class="sub_store4">
+                    <p class="store_ment">이태원점</p>
+                    <i class="fas fa-map-marker-alt show"></i>
+                    <p class="store_address show">서울 용산구 녹사평대로 168-8</p>
+                    <p class="store_phone show">070-7717-0333</p>
+                    <p class="store_time show">매일 11:00 - 22:00</p>
+                </div>
+                
+                <div class="sub_store5">
+                    <p class="store_ment">잠실점</p>
+                    <i class="fas fa-map-marker-alt show"></i>
+                    <p class="store_address show">서울 송파구 올림픽로 240</p>
+                    <p class="store_phone show">02-2143-7004</p>
+                    <p class="store_time show">매일 10:00 - 21:00</p>
+                    
+                </div>
+                
+                <div class="sub_store6">
+                    <p class="store_ment">COMMING SOON</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="vision">
+            <p class="new">VISION</p>
+            <p class="vision_ment">최상의 커피는 최상의 관리에서부터 탄생합니다.</p>
+            
+            <div class="vision_icon">
+                <ul>
+                    <li>
+                        <img src="images/vision_icon1.png" alt="식재료 안전">
+                        <p class="vision_subtxt">식재료 안전</p>
+                    </li>
+                    <li>
+                        <img src="images/vision_icon2.png" alt="위생">
+                        <p class="vision_subtxt">위생</p>
+                    </li>   
+                    <li>
+                        <img src="images/vision_icon3.png" alt="서비스">
+                        <p class="vision_subtxt">서비스</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="faq">
+            <p class="new">FAQ</p>
+            <div class="faq_line"></div>
+            
+                
+        <div class="faq_box">
+            <h2 class="faq_main_txt">콩카페 매장에 흡연석이 있나요?</h2>
+            <p class="faq_sub_txt">
+                기본 금연 구역으로 설정, 운영하고 있습니다. 일부 점포(가맹점,야외 테라스 매장)는 흡연석을 별도로 마련한 곳이 있습니다. 
+            </p>
+            <h2 class="faq_main_txt">매장에서 무선 인터넷을 무료로 이용할 수 있나요?</h2>
+            <p class="faq_sub_txt">
+                전국 매장에서는 KT와 협약하여, 매장에서 자유롭게 인터넷을 이용하실 수 있도록 지원해드리고 있습니다. 단, 건물의 특성상 무선 인터넷이 지원되지 않는 일부 매장이 있으니 양해 부탁드립니다.
+            </p>
+            <h2 class="faq_main_txt">콩카페 머그컵과 텀블러같은 상품을 구입하고싶어요</h2>
+            <p class="faq_sub_txt">
+                가까운 매장 어느곳이나 방문하셔서 직접 보고 구매 가능하십니다. 현재 온라인 구매는 불가합니다.
+            </p>
+            <h2 class="faq_main_txt">테이크아웃 종이컵은 따로 판매하지 않나요?</h2>
+            <p class="faq_sub_txt">
+                매장에서 사용되는 일회용품은 별도로 판매하지 않습니다.
+                만약 종이컵이 추가로 필요하신 분은 직원에게 요청하시면 사유에 따라 추가 제공해드립니다.
+            </p>
+        </div>
+        </section>
+
+    
+    <div id="top">
+        <img src="images/up-arrow.png" alt="TOP버튼" width="65px">
+    </div>
+    <footer></footer>
+</body>
+</html>

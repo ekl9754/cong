@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>콩카페</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+           $(function(){
+
+       
+      //menu
+           $("#menu>ul>li").hover(function(){
+               var i=$(this).index();
+               $("ul.sub").stop().fadeIn(400);
+               $("header").css({"height":"230px"});
+               $("#right_menu").css({"color":"black"});
+               $("#menu>ul").css({"color":"#252525"});
+               $("#menu>ul>li>.t_line").css({"color":"#4d6205"});
+           },function(){
+               $("ul.sub").stop().fadeOut(100);
+               $("header").css({"height":"0px"});
+               $("#right_menu").css({"color":"white"});
+               $("#menu>ul").css({"color":"white"});
+               $("#menu>ul>li>.t_line").css({"color":"white"});
+           });
+            
+            
+           $(".menu_icon").click(function(){
+              $("#slide_menu").stop().show(300); 
+           });
+            
+           $(".close_bt").click(function(){
+              $("#slide_menu").stop().hide(200);
+           });
+            
+                
+            $("#slide_menu>ul>li.cong").click(function(){
+                 var onCheck = $(this).children("#slide_menu>ul>li>a").hasClass("on");
+                  
+                  if(onCheck){
+                      $(this).children("#slide_menu>ul>li>a").removeClass("on");
+                      $(this).siblings("ul.slide").hide();
+                  }
+                  else{
+                      $("#slide_menu>ul>li>a").addClass("on");
+                      $(this).siblings("ul.slide").show();
+                  }
+              });
+        //menu 햄버거 슬라이드 업다운
+    var isOn=0;
+    var current=10;
+    $("#slide_menu> ul > li ").click(function(){
+        var i = $(this).index();
+        if (isOn == 1){
+            current = 10;
+        }
+        console.log("i:"+ i+"current:"+current+ "isOn:"+isOn);
+        if (current != i){
+            $("#m_menu > #m_bg_menu > .m_btm_menu > ul > li > .m_sub").stop().slideUp(function(){
+                $("#m_menu > #m_bg_menu > .m_btm_menu > ul > li").css({"background":"url(images/m_menu_down.png) 93% 15px no-repeat", "background-size": "25px 25px"});
+            });
+
+            $("#m_menu > #m_bg_menu > .m_btm_menu > ul > li > a").eq(i).css({"color":"#39528a", "font-weight":"bold", "font-family":"NanumSquareEB"});
+
+            $("#m_menu > #m_bg_menu > .m_btm_menu > ul > li > .m_sub").eq(i).stop().slideDown(function(){
+                $("#m_menu > #m_bg_menu > .m_btm_menu > ul > li").eq(i).css({"background":"url(images/m_menu_up.png) 93% 15px no-repeat", "background-size": "25px 25px"});
+                isOn = 2;
+            });
+        } else {
+             $("#m_menu > #m_bg_menu > .m_btm_menu > ul > li > .m_sub").stop().slideUp(function(){
+                $("#m_menu > #m_bg_menu > .m_btm_menu > ul > li").css({"background":"url(images/m_menu_down.png) 93% 15px no-repeat", "background-size": "25px 25px"});
+                 isOn= 1;
+            });
+        }
+        current = i;
+    });  
+       });
+
+    </script>
+    
+    <style>
+        /*header*/
+header{position:absolute; height:0; background:  white; width: 100%; margin: 0 auto; z-index: 1111; transition: 0.5s; color: white;}
+#logo{float: left; position: relative; margin-left: 100px;}
+
+/*메뉴바*/
+#menu{width: 100%;  margin: 0 auto; font-family:'NanumSquareEB'; padding-top: 30px;}
+#menu>ul{max-width: 1200px; margin: 0 auto; padding-left: 50px; color: white; font-size: 19px;}
+#menu>ul:after{content: ""; display: block; clear: both;}
+#menu>ul>li{float: left; text-align: center; width: 20%; margin: 0 auto; line-height: 40px; }
+.hidden{color: white; visibility: hidden}
+ul.sub{width: 100%; position: relative; display: none; left: 0; border-right: 1px solid #e5e5e5;font-family: 'NanumSquareB';}
+ul#line{border-left: 1px solid #dddddd;}
+ul.sub:after{content: ""; display: block; clear: both;}
+ul.sub>li{float: left; width: 100%;}
+ul.sub>li>a{display: block; text-align: center; padding: 5px 10px;}
+.t_line{display:inline-block; margin:0; text-transform:uppercase;}
+.t_line:after {display:block; content: ''; border-bottom: solid 3px #4d6205;  transform: scaleX(0); transition: transform 250ms ease-in-out;}
+.t_line:hover:after { transform: scaleX(1); }
+#right_menu{position: absolute; right: 100px; margin-top: 10px; top: 0;font-family: 'NanumSquareR'; color: white; padding-top: 30px;}
+#right_menu>ul>li{float: left}
+#right_menu>.menu_icon{float: left; display: none; margin-right: -50px;}
+
+/*slide 메뉴바*/
+#slide_menu{position: fixed; background:url(images/stamp-cong.png) no-repeat #425805; background-position: 100% 95%; background-size:50%; color: white; display: none; width: 80%; right: 0; height: 100%; z-index: 1111;}
+#slide_menu>ul{margin: 20px;}
+#slide_menu>ul>li{padding: 20px; width: 100%; font-size: 18px; font-family: 'NanumSquareB'; }
+.close_bt{position: absolute; left: -50px; padding: 20px; background: #2a350a; width: 50px;}
+
+
+
+
+.accordion{width:100%;padding:18px;border:none;border-bottom:1px solid #ced4da;outline:none;background:none;color:white;font-size:15px;text-align:left;cursor:pointer;transition:0.4s;font-family: 'NanumSquareEB';font-size: 18px}
+button:hover{color: #131902;}
+.accordion:first-child{border-top:1px solid #ced4da;}
+.active, .accordion:hover{}
+.accordion:after{float:right;margin-left:5px;content:'\002B';color:white;font-weight:bold;}
+.active:after{content:"\2212";}
+.panel{max-height:0;padding:0 18px;overflow:hidden;background:none; transition:max-height 0.2s ease-out;font-family: 'NanumSquareB'; font-size: 18px;}
+.panel>p{margin-top: 20px;color:#d2d8bd}
+.panel>p:nth-child(1){margin-top: 30px; margin-bottom: 30px;}
+.panel>p:nth-child(2){margin-bottom: 30px;}
+    </style>
+  
+</head>
+<body>
+    <header>
+
+        <div id="menu">
+        <div id="logo">
+            <h1>
+                <a href="index.html"><img src="images/logo.png" alt="콩카페" width="100px"></a>
+            </h1>
+        </div>
+        <ul>
+            <li><a href="sub-1.html" class="t_line">CONGCAFE</a>
+                <ul id="line" class="sub">
+                    <li><a href="sub-1.html">브랜드소개</a></li> 
+                    <li class="hidden"><a href="#">.</a></li>   
+                </ul>
+            </li>
+            <li><a href="sub-2.html" class="t_line">COFFEE</a>
+                <ul class="sub">
+                    <li><a href="sub-2.html">커피스토리</a></li> 
+                    <li class="hidden"><a href="#">.</a></li>   
+                </ul>
+            </li>
+            <li><a href="sub-3.html" class="t_line">NEWS</a>
+                <ul class="sub">
+                    <li><a href="sub-3.html">미디어</a></li>
+                    <li class="hidden"><a href="#">.</a></li>   
+                </ul>
+            </li>
+            <li><a href="sub-4.html" class="t_line">STORE</a>
+                <ul class="sub">
+                    <li><a href="sub-4.html">매장안내</a></li>
+                    <li><a href="#">매장찾기</a></li>   
+                </ul>
+            </li>
+            <li><a href="sub-5.html" class="t_line">COMMUNITY</a>
+                <ul class="sub">
+                    <li><a href="sub-5.html">공지사항</a></li>
+                    <li><a href="#">SNS스토리</a></li>   
+                </ul>
+            </li>
+        </ul>
+        
+
+        
+        <div id="right_menu">
+          <div class="menu_icon">
+              <a href="#"><img src="images/menu-icon.png" alt="메뉴" width="40px"></a>
+          </div>
+           <ul>
+               <li><a href="login.html">로그인</a></li>
+               <li>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</li>
+               <li><a href="join.html">회원가입</a></li>
+           </ul>
+       </div>
+    </div>
+    
+
+        </header>
+    
+
+    
+    <div id="slide_menu">
+          <div class="close_bt">
+                <a href="#">X</a>
+            </div>
+          <ul>
+                <li>
+                   <a href="login.html">로그인</a>
+                    <a href="#">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a>
+                    <a href="join.html">회원가입</a>
+                </li>
+                       <button class="accordion">CONGCAFE</button>
+                       <div class="panel">
+                         <p><a href="sub-1.html">- 브랜드소개</a></p>
+                       </div>
+                       
+                       <button class="accordion">COFFEE</button>
+                       <div class="panel">
+                         <p><a href="sub-2.html">- 커피스토리</a></p>
+                       </div>
+                       
+                       <button class="accordion">NEWS</button>
+                       <div class="panel">
+                         <p><a href="sub-3.html">- 미디어</a></p>
+                       </div>
+                       
+                       <button class="accordion">STORE</button>
+                       <div class="panel">
+                         <p><a href="sub-4.html">- 매장안내</a></p>
+                         <p><a href="#">- 매장찾기</a></p>
+                       </div>
+                       
+                       <button class="accordion">COMMUNITY</button>
+                       <div class="panel">
+                         <p><a href="sub-5.html">- 공지사항</a></p>
+                         <p><a href="#">- SNS스토리</a></p>
+                       </div>
+           </ul>
+    </div>
+    
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+  var i;
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var panel = this.nextElementSibling;
+  if (panel.style.maxHeight){
+  panel.style.maxHeight = null;
+  } else {
+  panel.style.maxHeight = panel.scrollHeight + "px";
+  }
+  });
+  } </script>
+    
+
+  
+</body>
+</html>

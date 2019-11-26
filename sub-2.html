@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>콩카페</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="css/sub-2.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/aos.css">
+   <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/aos.js"></script>
+    
+    
+    <script>
+        $(function(){
+            $("header").load("header.html");
+            $("footer").load("footer.html");
+            new WOW().init();
+            
+            
+     //aos   
+          AOS.init({
+            easing: 'ease-in-out-sine'
+          });
+    
+    //scorll-Top        
+       $(window).scroll(function(){
+                if($(this).scrollTop()>=500){
+                    $("#top").fadeIn();
+                    
+                }else{
+                    $("#top").fadeOut();
+                }
+            });
+            $("#top").click(function(){
+                $('html,body').animate({scrollTop:0},1000);
+            });
+    //NEW MENU hover
+            $(".new-1>p").hide();
+            $(".new-item>ul>li.new-1").mouseenter(function(){
+                $(".new-item>ul>li.new-1>p").stop().show();
+            });
+            $(".new-item>ul>li.new-1").mouseleave(function(){
+                $(".new-item>ul>li.new-1>p").hide();
+            });
+            
+            $(".new-2>p").hide();
+            $(".new-item>ul>li.new-2").mouseenter(function(){
+                $(".new-item>ul>li.new-2>p").stop().show();
+            });
+            $(".new-item>ul>li.new-2").mouseleave(function(){
+                $(".new-item>ul>li.new-2>p").hide();
+            });
+            
+            $(".new-3>p").hide();
+            $(".new-item>ul>li.new-3").mouseenter(function(){
+                $(".new-item>ul>li.new-3>p").stop().show();
+            });
+            $(".new-item>ul>li.new-3").mouseleave(function(){
+                $(".new-item>ul>li.new-3>p").hide();
+            });
+
+       });
+    
+        
+    //tap menu
+          
+    </script>
+    <script>
+         $(function () {	
+            tab('#tab',0);	
+            });
+
+            function tab(e, num){
+            var num = num || 0;
+            var menu = $(e).children();
+            var con = $(e+'_con').children();
+            var select = $(menu).eq(num);
+            var i = num;
+
+            select.addClass('on');
+            con.eq(num).show();
+
+            menu.click(function(){
+                if(select!==null){
+                    select.removeClass("on");
+                    con.eq(i).hide();
+                }
+
+                select = $(this);	
+                i = $(this).index();
+
+                select.addClass('on');
+                con.eq(i).show();
+            });
+        }
+    </script>
+    <style>
+@media all and (max-width:1610px){ 
+    #menu>ul{width: 65%; padding-left: 200px; }
+} 
+@media all and (max-width:1588px){ 
+    .footer_m>ul>li:nth-child(1){margin-left: 2% !important}
+}
+@media all and (max-width:1500px){ 
+     #menu>ul{width: 50%; padding-left: 200px; }
+}   
+@media all and (min-width:768px) and (max-width:1499px){
+    #menu>ul{display:none;}
+    #right_menu{right: 77px !important;}
+    #right_menu>ul{display: none;}
+    #right_menu>.menu_icon{display: block !important;}
+    #logo{margin-left: 50px;}
+    .main_col{margin: 0 !important; margin-left: 7% !important;}
+    .col{width: 20%; margin-right: 0 !important;}
+    .back>.inner>p{font-size: 15px;}
+    .system_txt>.system_title{font-size: 25px; padding-left: 10px;}
+    .system_txt>.system_line{width: 68px; height: 3px; margin-left: 10px;}
+    .system_txt>.system_ment{font-size: 17px; padding-left: 10px;}
+}
+@media all and (max-width:1245px){
+    .top_ment>.left_line{width: 20%;}
+    .top_ment>.right_line{width: 20%;}
+    .coffee-box{max-width: 90%;}
+    .coffee-boximg{width: 36%; margin-left: 64%;}
+    .coffee-box>.box-line{top: 50%;}
+}
+@media all and (max-width:973px){
+    .top_ment>.left_line{width: 15%;}
+    .top_ment>.right_line{width: 15%;}
+    .top_ment>p.coffee_subment{padding: 0px 20px;}
+    .coffee-box>.box-title{font-size: 17px; top: 27%; left: 4%;}
+    .coffee-box>.box-line{width: 43px; height: 3px; left: 4%; top: 48%;}
+    .coffee-box>.box-ment{font-size: 14px; top: 60%; left: 4%; line-height: 24px;}
+    .robusta>.robusta-title{font-size: 44px;}
+    .robusta>.robusta-ment{font-size: 16px; padding: 0 10px;}
+}
+@media screen and (max-width:767px){
+    #menu>ul{display: none;}
+    #right_menu{right: 88px !important;}
+    #right_menu>ul{display: none;}
+    #logo{margin-left: 25px !important;}
+    #right_menu>.menu_icon{display: block !important ;}
+    #right_menu{margin-right: -30px;}
+    .menu_intro{font-size: 30px;}
+    .top_ment>.left_line{display: none;}
+    .top_ment>.right_line{display: none;}
+    .top_ment>p.coffee_title{font-size: 30px;}
+    .top_ment>p.coffee_subment{font-size: 15px;}
+    .coffee-item1{float: none; width: 100%;}
+    .coffee-item2{display: none;}
+    .coffee-item3{display: none;}
+    .coffee-img{margin-top: 25px;}
+    .coffee-img>div{margin-left: 0; padding: 10px;}
+    .coffee-attach1{padding-bottom: 40px; margin-top: 50px;}
+    .system_txt>.system_title{padding: 0 20px; font-size: 24px; padding-top: 62px;}
+    .system_txt>.system_line{margin-left: 20px;}
+    .system_txt>.system_ment{line-height: 33px; font-size: 16px; padding: 0 20px;}
+    .coffee-box{max-width: 100%; margin: 45px 10px;}
+    .coffee-box>.box-title{position: inherit; display: block; margin-top: 20px; }
+    .coffee-box>.box-line{position: inherit; margin: 10px 0;}
+    .coffee-box>.box-ment{position: inherit; margin: 20px 0;}
+    .coffee-boximg{width: 100%; margin-left: 0;}
+    .coffee-attach2{margin-top: 0; _height: 0; _padding-bottom: 60px;}
+    .robusta>.robusta-title{font-size: 35px; padding-top: 45px;}
+    .robusta>.robusta-ment{margin-top: 40px;}
+    #big_menu{width: 140px !important; margin-left: 20px !important; font-size:12px;}
+    #small_menu{width: 140px !important; padding-left: 20px !important; font-size: 12px;}
+#top{bottom: 45px !important; right: 25px !important;}
+.footer_m{display: none;}
+.footer_logo{display: none;} 
+#footer{width: 100% !important; text-align: center; padding: 10px;}
+footer{padding-top: 20px; width: 100% !important}
+.ex2{display: none;}
+address{margin-left: 0 !important; position: inherit !important; font-size: 14px !important; margin-top: 20px !important;}
+}
+        
+    </style>
+
+</head>
+<body>
+    <header></header>
+    
+    
+        <div id="keyimage">
+           <div class="menu_intro">
+               <p>커피스토리</p>
+           </div>         
+        </div>
+   
+        <div class="quick">
+            <div class="quick-in">
+                <a href="index.html"><div class="home_button"></div></a>
+            </div>
+            
+            <select name="big" id="big_menu">
+                <option value="CONGCAFE">CONGCAFE</option>
+                <option selected value="COFFEE">COFFEE</option>
+                <option value="NEWS">NEWS</option>
+                <option value="STORE">STORE</option>
+                <option value="COMMUNITY">COMMUNITY</option>
+            </select>
+            
+            <select name="big" id="small_menu">
+                <option value="커피스토리">커피스토리</option>
+            </select>
+        </div>
+        
+         
+        <section id="coffee">
+            <div class="top_ment">
+                <div class="left_line"></div>
+                <p class="coffee_title">Coffee, Handcrafted Flavor</p>
+                <p class="coffee_ment">Ingredients for Perfection Find Your Flavor</p>
+                <div class="right_line"></div>
+                <p class="coffee_subment">콩카페의 커피는 베트남 람동성, 달랏 지방에서 생산된 로버스타 원두를 사용해 이색적인 커피 맛을 느낄 수 있습니다.<br>
+ 고객 여러분께 최상의 신선도와 탁월한 맛을 즐길 수 있도록 최고의 포장 상태를 유지하여 갓 볶아낸 신선함 그대로 제공 드리고 있습니다.<br> 커피 한 잔속에 담긴 수많은 전문가의 노력, 고객을 위해 지켜온 약속입니다.
+                </p>
+                
+                <div class="coffee-img">
+                    <div class="coffee-item1">
+                        <div class="img">
+                           <div class="scale">
+                               <img src="images/coffee-1.jpg" alt="커피사진1">
+                           </div>
+                        </div>
+                    </div>
+              
+                    
+                    <div class="coffee-item2">
+                        <div class="img">
+                           <div class="scale">
+                               <img src="images/coffee-2.jpg" alt="커피사진2">
+                           </div>
+                        </div>
+                    </div>
+                    
+                    <div class="coffee-item3">
+                        <div class="img">
+                           <div class="scale">
+                               <img src="images/coffee-3.jpg" alt="커피사진3">
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                  
+        </section>
+        
+                
+         <div class="coffee-attach1">
+            <div class="system_txt">
+                <p class="system_title">믿을 수 있는 커피 품질 관리 시스템</p> 
+                <div class="system_line"></div>
+                <p class="system_ment">
+                콩카페는 소비자가 원하는 커피시장의 변화를 주시하고 그 트렌드에 맞는 커피를 개발하고 전달하기 위해 최선을 다하고 있습니다.<br> 
+                맛은 물론 위생과 안전성을 모두 갖추기 위해 HACCP인증 및 식품안전경영 시스템인증서를 받은 제조시설에서 커피를 생산합니다.<br>
+                특히 신선한 커피의 맛과 향을 유지하도록 질소충전 포장하여 매장에 공급함으로써 고객에게 최상의 커피 향과 맛이 보존되어 전달되도록 노력하고 있습니다.</p>
+            </div>   
+         </div> 
+
+        <div class="coffee-mainbox">
+            <div class="coffee-box">
+                <span class="box-title">커피를 연구하는<br> 최고의 분야별 전문가와 함께 합니다.</span>
+                <div class="box-line"></div>
+                <p class="box-ment">수많은 전문가들이 더 좋은 커피를 만들기 위해 함께 연구하고,<br> 
+            지속적인 투자로 국내 최고의 시스템을 구축하고 있습니다.</p>
+                <img src="images/coffe-boximg.jpg" alt="커피이미지" class="coffee-boximg">
+            </div>
+        </div>
+        
+        <div class="coffee-attach2">
+            <div class="robusta">
+                <p class="robusta-title">ROBUSTA</p>
+                <p class="robusta-ment">베트남 로부스타는 맛과 향이 고소하며 묵직한 바디감을 지니고 있습니다.<br>
+또한 로스팅 정도에 따라 더욱 진한 커피를 즐길 수 있으며, 아라비카 원두에 비해 질감과 크레마가 더 풍부하다는 장점이 있습니다.<br>
+로부스타 원두를 ‘핀(Phin)’으로 진하게 내린 커피에, 연유와 코코넛크림 등을 섞어 달콤함을 더해주고<br>핀을 머그컵 위에 올리고 원두를 갈아 넣은 뒤 뜨거운 물을 부으면, 특유의 고소하고 쌉싸름한 풍미를 즐길 수 있습니다.
+</p>
+            </div>
+        </div>
+    
+    
+    <div id="top">
+        <img src="images/up-arrow.png" alt="TOP버튼" width="65px">
+    </div>
+    <footer></footer>
+</body>
+</html>

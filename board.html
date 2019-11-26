@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>공지사항</title>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <style>
+section {position: relative; width: 100%;}
+
+#section_1 {position: relative; width: 100%; margin: 0 auto; max-width: 1400px; margin-top: 50px;}
+	
+#section_1 .searchbox {width: 100%; margin: 0 auto; text-align: center; margin-bottom: 5%; }
+#section_1 .searchbox .selectbox {border: 1px solid #ccc; width: 148px; vertical-align: middle; height: 57px; text-indent: 1vw; margin-right: -4px; border-right: 0; font-size: 15px; font-family: 'NanumSquareB'; appearance: none; -moz-appearance: none;
+    -webkit-appearance: none; background: url(images/notice_arrow.png) no-repeat; background-size: 16px 18px; background-position: 117px 17px;}
+        .text::appearance {padding-right: 50px;}
+#section_1 .searchbox .text {width: 30%; border: 1px solid #ccc; font-size: 15px;  color: black; height: 57px;  text-indent: 1vw; vertical-align: middle; font-family: 'NanumSquareB';}
+#section_1 .searchbox .text::placeholder {color: #686868;  font-family: 'NanumSquareB'; }
+.searcharea .fa-search{cursor: pointer; font-size: 19px; background: #ccc; width: 57px; vertical-align: middle; height: 57px; line-height: 57px; margin-left: -4px;}
+fieldset{border: none; margin: 0 auto;}
+
+
+
+ 
+    
+#section_1 .news {width: 1200px; margin: 0 auto;}
+        #section_1 .news tbody{font-family: 'NanumSquareR';}
+#section_1 .news thead {border-top: 3px solid black; border-bottom: 1px solid #c1bfbf;}
+#section_1 .news thead tr td {font-family: 'NanumSquareEB'; font-size: 1vw; padding-top: 1.2%; padding-bottom: 1.2%; padding-right: 1%; padding-left: 1%; text-align: center;}
+#section_1 .news thead tr td.hnumber {width: 15%; }
+#section_1 .news thead tr td.hname {width: 70%;}
+#section_1 .news thead tr td.hdate {width: 15%;}
+#section_1 .news tbody {margin: 0; padding: 0;}
+#section_1 .news tbody tr {}
+#section_1 .news tbody tr td {padding-top: 1.5%; padding-bottom: 1.5%;}
+#section_1 .news tbody tr td.number {width: 15%; text-align: center; border-bottom: 1px solid #c1bfbf; font-size: 16px;}
+#section_1 .news tbody tr td.name {width: 70%; text-align: left; padding-left: 2%; border-bottom: 1px solid #c1bfbf; font-size: 16px;}
+#section_1 .news tbody tr td.date {width: 15%; text-align: center; border-bottom: 1px solid #c1bfbf; font-size: 16px;}
+
+#section_1 .page_num {width: 100%; text-align: center; margin: 0 auto; display: inline-block; position: relative; margin-top: 2%; margin-bottom: 5%;}
+#section_1 .page_num .front_page {display: inline-block; width: 36px; height: 35px; padding-top: 5px; background: url(images/front.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+#section_1 .page_num .prev {display: inline-block; width: 36px; height: 35px; background: url(images/prev.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+#section_1 .page_num .num_1 {display: inline-block; width: 36px; height: 35px; line-height: 35px; margin-right: 1%;}
+#section_1 .page_num .num_2 {display: inline-block; width: 36px; height: 35px; line-height: 35px; margin-right: 1%;}
+#section_1 .page_num .num_3 {display: inline-block; width: 36px; height: 35px; line-height: 35px; margin-right: 1%;}
+#section_1 .page_num .next {display: inline-block; width: 36px; height: 35px; background: url(images/next.png); margin-right: 1%; position: relative; top: 10px; background-size: cover;}
+#section_1 .page_num .back_page {display: inline-block; width: 36px; height: 35px; background: url(images/back.png); position: relative; top: 10px; background-size: cover;}
+.onClick{background: #3d3d3d; font-weight: bold; color: white;}
+
+
+
+@media screen and (min-width:1200px) and (max-width:1399px){
+
+	
+	
+	#section_1 .news {width: 90%; margin: 0 auto;}
+	#section_1 .news thead {border-top: 2px solid black; border-bottom: 1px solid grey;}
+	#section_1 .news thead tr {}
+	#section_1 .news thead tr td {font-weight: bold; font-size: 18px; padding-top: 1%; padding-bottom: 1%; padding-right: 1%; padding-left: 1%; text-align: center;}
+	#section_1 .news thead tr td.hnumber {width: 15%;}
+	#section_1 .news thead tr td.hname {width: 70%;}
+	#section_1 .news thead tr td.hdate {width: 15%;}
+	#section_1 .news tbody {margin: 0; padding: 0;}
+	#section_1 .news tbody tr {}
+	#section_1 .news tbody tr td {padding-top: 1.5%; padding-bottom: 1.5%;}
+	#section_1 .news tbody tr td.number {width: 15%; text-align: center; border-bottom: 1px solid grey; font-size: 18px;}
+	#section_1 .news tbody tr td.name {width: 70%; text-align: left; padding-left: 2%; border-bottom: 1px solid grey; font-size: 18px;}
+	#section_1 .news tbody tr td.date {width: 15%; text-align: center; border-bottom: 1px solid grey; font-size: 18px;}
+    
+    
+
+}
+
+
+@media screen and (min-width:800px) and (max-width:1199px){
+
+	
+
+	#section_1 .news {width: 90%; margin: 0 auto;}
+	#section_1 .news thead {border-top: 3px solid black; border-bottom: 1px solid grey;}
+	#section_1 .news thead tr {}
+	#section_1 .news thead tr td {font-weight: bold; font-size: 17px; padding-top: 1%; padding-bottom: 1%; padding-right: 1%; padding-left: 1%; text-align: center;}
+	#section_1 .news thead tr td.hnumber {width: 15%;}
+	#section_1 .news thead tr td.hname {width: 70%;}
+	#section_1 .news thead tr td.hdate {width: 15%;}
+	#section_1 .news tbody {margin: 0; padding: 0;}
+	#section_1 .news tbody tr {}
+	#section_1 .news tbody tr td {padding-top: 1.5%; padding-bottom: 1.5%;}
+	#section_1 .news tbody tr td.number {width: 15%; text-align: center; border-bottom: 1px solid grey; font-size: 16px;}
+	#section_1 .news tbody tr td.name {width: 70%; text-align: left; padding: 20px; border-bottom: 1px solid grey; font-size: 16px;}
+	#section_1 .news tbody tr td.date {width: 15%; text-align: center; border-bottom: 1px solid grey; font-size: 16px;}
+    
+    #section_1 .page_num .front_page {display: inline-block; width: 25px; height: 24px; padding-top: 5px; background: url(images/front.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+    
+    #section_1 .page_num .prev {display: inline-block; width: 25px; height: 24px; background: url(images/prev.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+    
+    #section_1 .page_num .num_1 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 15px;}
+
+    
+    #section_1 .page_num .num_2 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 15px;}
+    
+    #section_1 .page_num .num_3 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 15px;}
+    
+    
+    #section_1 .page_num .next {display: inline-block; width: 25px; height: 24px; background: url(images/next.png); margin-right: 1%; position: relative; top: 10px; background-size: cover;}
+    
+    #section_1 .page_num .back_page {display: inline-block; width: 25px; height: 24px; background: url(images/back.png); position: relative; top: 10px; background-size: cover;}
+
+
+}
+
+@media all and (min-width:30px) and (max-width:800px){
+
+    p.new{font-size: 24px;}
+    #section_1 .searchbox .selectbox{height: 45px; text-indent: 3vw; font-size: 12px; background-size: 15px 17px; background-position: 117px 13px;}
+    #section_1 .searchbox .text{height: 45px; font-size: 12px;}
+    #section_1 .fa-search{font-size: 17px; width: 45px; height: 45px; line-height: 45px;}
+	#section_1 .news {width: 90%; margin: 0 auto;}
+	#section_1 .news thead {border-top: 3px solid black; border-bottom: 1px solid grey;}
+	#section_1 .news thead tr {}
+	#section_1 .news thead tr td {font-weight: bold; font-size: 14px; padding: 8px; text-align: center;}
+	#section_1 .news thead tr td.hnumber {width: 15%;}
+	#section_1 .news thead tr td.hname {width: 70%;}
+	#section_1 .news thead tr td.hdate {width: 15%;}
+	#section_1 .news tbody {margin: 0; padding: 0;}
+	#section_1 .news tbody tr {}
+	#section_1 .news tbody tr td {padding-top: 5%; padding-bottom: 5%;}
+	#section_1 .news tbody tr td.number {width: 13%; text-align: center; border-bottom: 1px solid grey; font-size: 14px;}
+	#section_1 .news tbody tr td.name {width: 70%; text-align: left; padding-left: 2%; border-bottom: 1px solid grey; font-size: 14px; padding-right: 2%;}
+	#section_1 .news tbody tr td.date {width: 17%; text-align: center; border-bottom: 1px solid grey; font-size: 14px;}
+    
+    #section_1 .page_num .front_page {display: inline-block; width: 25px; height: 24px; padding-top: 5px; background: url(images/front.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+    
+    #section_1 .page_num .prev {display: inline-block; width: 25px; height: 24px; background: url(images/prev.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+    
+    #section_1 .page_num .num_1 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 14px;}
+    
+    #section_1 .page_num .num_2 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 14px;}
+    
+    #section_1 .page_num .num_3 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 14px;}
+    
+    
+    #section_1 .page_num .next {display: inline-block; width: 25px; height: 24px; background: url(images/next.png); margin-right: 1%; position: relative; top: 10px; background-size: cover;}
+    
+    #section_1 .page_num .back_page {display: inline-block; width: 25px; height: 24px; background: url(images/back.png); position: relative; top: 10px; background-size: cover;}
+	
+}
+    </style>
+    
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    
+    <script>
+    $(function(){
+        var i=0;
+        console.log($("table").index());
+        $(".n1").show();
+        $(".num_1").addClass("onClick");
+        $(".num_2").removeClass("onClick");
+        $(".num_3").removeClass("onClick");
+        $(".n2").hide();
+        $(".n3").hide();
+        
+        $(".front_page").click(function(e){
+            e.preventDefault();
+            $(".n1").show();
+            $(".num_1").addClass("onClick");
+            $(".num_2").removeClass("onClick");
+            $(".num_3").removeClass("onClick");
+            $(".n2").hide();
+            $(".n3").hide();
+        });
+        
+        $(".prev").click(function(e){
+            e.preventDefault();
+            switch(i){
+                case 1:
+                    i = 0;
+                    $(".n1").show();
+                    $(".num_1").addClass("onClick");
+                    $(".num_2").removeClass("onClick");
+                    $(".num_3").removeClass("onClick");
+                    $(".n2").hide();
+                    $(".n3").hide();
+                    break;
+                case 2:
+                    i = 1;
+                    $(".n2").show();
+                    $(".num_2").addClass("onClick");
+                    $(".num_1").removeClass("onClick");
+                    $(".num_3").removeClass("onClick");
+                    $(".n1").hide();
+                    $(".n3").hide();
+                    break;
+                case 3:
+                    i = 2;
+                    $(".n3").show();
+                    $(".num_3").addClass("onClick");
+                    $(".num_1").removeClass("onClick");
+                    $(".num_2").removeClass("onClick");
+                    $(".n1").hide();
+                    $(".n2").hide();
+                    break;
+
+            }
+                    
+        });
+        
+        $(".num_1").click(function(e){
+            e.preventDefault();
+            i = 0;
+            $(".n1").show();
+            $(".num_1").addClass("onClick");
+            $(".num_2").removeClass("onClick");
+            $(".num_3").removeClass("onClick");
+            $(".n2").hide();
+            $(".n3").hide();
+        });
+        $(".num_2").click(function(e){
+            e.preventDefault();
+            i = 1;
+            $(".n2").show();
+            $(".num_2").addClass("onClick");
+            $(".num_1").removeClass("onClick");
+            $(".num_3").removeClass("onClick");
+            $(".n1").hide();
+            $(".n3").hide();
+        });
+        $(".num_3").click(function(e){
+            e.preventDefault();
+            i = 2;
+            $(".n3").show();
+            $(".num_3").addClass("onClick");
+            $(".num_1").removeClass("onClick");
+            $(".num_2").removeClass("onClick");
+            $(".n1").hide();
+            $(".n2").hide();
+        });
+
+        
+        $(".next").click(function(e){
+            e.preventDefault();
+            switch(i){
+                case 0:
+                    i = 1;
+                    $(".n2").show();
+                    $(".num_2").addClass("onClick");
+                    $(".num_1").removeClass("onClick");
+                    $(".num_3").removeClass("onClick");
+                    $(".n1").hide();
+                    $(".n3").hide();
+                    break;
+                case 1:
+                    i = 2;
+                    $(".n3").show();
+                    $(".num_3").addClass("onClick");
+                    $(".num_1").removeClass("onClick");
+                    $(".num_2").removeClass("onClick");
+                    $(".n1").hide();
+                    $(".n2").hide();
+                    break;
+
+            }
+                    
+        });
+        
+        $(".back_page").click(function(e){
+            e.preventDefault();
+            $(".n3").show();
+            $(".num_3").addClass("onClick");
+            $(".num_1").removeClass("onClick");
+            $(".num_2").removeClass("onClick");
+            $(".n1").hide();
+            $(".n2").hide();
+        });
+    });
+        
+    </script>
+    
+    
+</head>
+<body>
+    	<section>		
+    		<div id="section_1">
+    			<div class="searchbox">
+    				<form action="post" class="searcharea">
+    					<fieldset>
+    						<legend>게시물검색</legend>
+    						<select name="select1" id="select1" class="selectbox">
+    							<option value>전체</option>
+    							<option value="1">제목</option>
+    							<option value="2">내용</option>
+    						</select>
+    						<input type="text" class="text" title="검색어" placeholder="검색어를 입력하세요.">
+    						<i class="fa fa-search"></i>
+    					</fieldset>
+    				</form>
+    			</div>
+    		
+    		
+    		
+    			
+    			<table class="news n1">
+    				<thead>
+    					<tr>
+    						<td class="hnumber">번호</td>
+    						<td class="hname">제목</td>
+    						<td class="hdate">등록일</td>
+    					</tr>
+    				</thead>
+    				<tbody>
+    					<tr>
+    						<td class="number">23</td>
+    						<td class="name"><a href="#1">연남점 : 프로젝트 관리 보조원 모집</a></td>
+    						<td class="date">2019 - 10 - 24</td>
+    					</tr>
+    					<tr>
+    						<td class="number">22</td>
+    						<td class="name"><a href="#1">연남점 : 영업 지원 전문가 모집</a></td>
+    						<td class="date">2019 - 10 - 21</td>
+    					</tr>
+    					<tr>
+    						<td class="number">21</td>
+    						<td class="name"><a href="#1">Plus x Premi3r : Bucket S.A.V.E 제품 출시</a></td>
+    						<td class="date">2019 - 10 - 10</td>
+    					</tr>
+    					<tr>
+    						<td class="number">20</td>
+    						<td class="name"><a href="#1">CONG# 5 : 녹두 케이크 만들기</a></td>
+    						<td class="date">2019 - 10 - 05</td>
+    					</tr>
+    					<tr>
+    						<td class="number">19</td>
+    						<td class="name"><a href="#1">판교점: 영업 사원 채용 매니저 모집</a></td>
+    						<td class="date">2019 - 10 - 03</td>
+    					</tr>
+    					<tr>
+    						<td class="number">18</td>
+    						<td class="name"><a href="#1">신도림점: 채용 전문가 교육</a></td>
+    						<td class="date">2019 - 10 - 01</td>
+    					</tr>
+    					<tr>
+    						<td class="number">17</td>
+    						<td class="name"><a href="#1">신도림점: 콘텐츠 협력자 모집</a></td>
+    						<td class="date">2019 - 09 - 28</td>
+    					</tr>
+    					<tr>
+    						<td class="number">16</td>
+    						<td class="name"><a href="#1">Mooncakes와의 달콤한 콜라보</a></td>
+    						<td class="date">2019 - 09 - 12</td>
+    					</tr>
+    					<tr>
+    						<td class="number">15</td>
+    						<td class="name"><a href="#1">잠실점에서 "HAPPY MAP" 레이스에 참여하세요!</a></td>
+    						<td class="date">2019 - 08 - 30</td>
+    					</tr>
+    					<tr>
+    						<td class="number">14</td>
+    						<td class="name"><a href="#1">"Plus Passport"를 들고 콩카페 주변을 산책해보세요.</a></td>
+    						<td class="date">2019 - 07 - 02</td>
+    					</tr>
+    				</tbody>
+    			</table>
+    			
+    			<table class="news n2">
+    				<thead>
+    					<tr>
+    						<td class="hnumber">번호</td>
+    						<td class="hname">제목</td>
+    						<td class="hdate">등록일</td>
+    					</tr>
+    				</thead>
+    				<tbody>
+    					<tr>
+    						<td class="number">13</td>
+    						<td class="name"><a href="#1">새로운 로열티 카드로 포인트 적립 받으세요!</a></td>
+    						<td class="date">2019 - 06 - 30</td>
+    					</tr>
+    					<tr>
+    						<td class="number">12</td>
+    						<td class="name"><a href="#1">'두리안 코코넛 스무디', '코코넛 민트' 출시</a></td>
+    						<td class="date">2019 - 06 - 15</td>
+    					</tr>
+    					<tr>
+    						<td class="number">11</td>
+    						<td class="name"><a href="#1">행복한 어린이 날, 콩카페에서 의미있는 선물 받기</a></td>
+    						<td class="date">2019 - 05 - 01</td>
+    					</tr>
+    					<tr>
+    						<td class="number">10</td>
+    						<td class="name"><a href="#1">콩카페, "Take away"모델 출시</a></td>
+    						<td class="date">2019 - 04 - 29</td>
+    					</tr>
+    					<tr>
+    						<td class="number">9</td>
+    						<td class="name"><a href="#1">Plus Green : 지구의 날에 패브릭 스트랩 제공</a></td>
+    						<td class="date">2019 - 04 - 15</td>
+    					</tr>
+    					<tr>
+    						<td class="number">8</td>
+    						<td class="name"><a href="#1">판교, 향수를 불러일으키는 커피 한 방울</a></td>
+    						<td class="date">2019 - 04 - 04</td>
+    					</tr>
+    					<tr>
+    						<td class="number">7</td>
+    						<td class="name"><a href="#1">캠페인 출시 "오래, 영원히"</a></td>
+    						<td class="date">2019 - 03 - 25</td>
+    					</tr>
+    					<tr>
+    						<td class="number">6</td>
+    						<td class="name"><a href="#1">봄 투어 'PASSPORT PLUS'</a></td>
+    						<td class="date">2019 - 03 - 04</td>
+    					</tr>
+    					<tr>
+    						<td class="number">5</td>
+    						<td class="name"><a href="#1">신메뉴 "레몬 망고 차" 출시</a></td>
+    						<td class="date">2019 - 01 - 23</td>
+    					</tr>
+    					<tr>
+    						<td class="number">4</td>
+    						<td class="name"><a href="#1">'FRESH-HONG-FUN' 기념품 선물 세트</a></td>
+    						<td class="date">2018 - 11 - 11</td>
+    					</tr>
+    				</tbody>
+    			</table>
+    			
+    			<table class="news n3">
+    				<thead>
+    					<tr>
+    						<td class="hnumber">번호</td>
+    						<td class="hname">제목</td>
+    						<td class="hdate">등록일</td>
+    					</tr>
+    				</thead>
+    				<tbody>
+    					<tr>
+    						<td class="number">3</td>
+    						<td class="name"><a href="#1">베트남항공 타GO
+베트남 콩카페 로 GO!</a></td>
+    						<td class="date">2018 - 09 - 11</td>
+    					</tr>
+    					<tr>
+    						<td class="number">2</td>
+    						<td class="name"><a href="#1">콩카페 1호점 오픈 기념 퀴즈 이벤트</a></td>
+    						<td class="date">2018 - 08 - 02</td>
+    					</tr>
+    					<tr>
+    						<td class="number">1</td>
+    						<td class="name"><a href="#1">콩카페가 연남동으로 찾아갑니다!</a></td>
+    						<td class="date">2018 - 07 - 20</td>
+    					</tr>
+    				</tbody>
+    			</table>
+    					
+    			
+    			
+    			<div class="page_num">
+    				<a href="#" class="front_page">
+    				</a>
+    				<a href="#" class="prev">
+    				</a>
+    				<a href="#" class="num_1">1</a>
+    				<a href="#" class="num_2">2</a>
+    				<a href="#" class="num_3">3</a>
+    				<a href="#" class="next">
+    				</a>
+    				<a href="#" class="back_page">
+    				</a>
+    			</div>
+    		</div>
+    	</section>
+	
+	
+	
+</body>
+</html>

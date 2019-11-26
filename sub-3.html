@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>콩카페</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="css/sub-3.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/aos.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />  
+   
+   
+    
+    
+    <script>
+        $(function(){
+            $("header").load("header.html");
+            $("footer").load("footer.html");
+          
+            
+    //더보기
+            $(".item_hidden").hide();
+        $(".more").click(function(){
+           $(".item_hidden").stop().show();
+            $(".more").hide();
+        });
+    
+    
+    //scorll-Top        
+       $(window).scroll(function(){
+                if($(this).scrollTop()>=500){
+                    $("#top").fadeIn();
+                    
+                }else{
+                    $("#top").fadeOut();
+                }
+            });
+            $("#top").click(function(){
+                $('html,body').animate({scrollTop:0},1000);
+            });
+   
+
+       });
+    
+        
+          
+    </script>
+
+    <style>
+@media all and (max-width:1610px){ 
+    #menu>ul{width: 65%; padding-left: 200px; }
+} 
+@media all and (max-width:1588px){ 
+    .footer_m>ul>li:nth-child(1){margin-left: 2% !important}
+} 
+@media all and (max-width:1500px){ 
+        #menu>ul{width: 50%; padding-left: 200px; }
+}   
+@media all and (min-width:768px) and (max-width:1499px){
+    #menu>ul{display:none;}
+    #right_menu{right: 77px !important;}
+    #right_menu>ul{display: none;}
+    #right_menu>.menu_icon{display: block !important;}
+    #logo{margin-left: 50px;}
+    .main_col{margin: 0 !important; margin-left: 7% !important;}
+    .col{width: 20%; margin-right: 0 !important;}
+    .back>.inner>p{font-size: 15px;}
+    .new-item{width: 90%;}
+    .new-item>ul>li{margin-left: 1%;}
+    .footer_m>ul>li{margin-right: 2% !important; width: 12% !important; font-size: 12px !important;}
+    .footer_m>ul>li:nth-child(1){margin-left: 0 !important}
+    .footer_m{padding-bottom: 30px !important;}
+}
+@media screen and (max-width:767px){
+    #menu>ul{display: none;}
+    #right_menu{right: 88px !important;}
+    #right_menu>ul{display: none;}
+    #logo{margin-left: 25px !important;}
+    #right_menu>.menu_icon{display: block !important ;}
+    #right_menu{margin-right: -30px;}
+    #big_menu{width: 140px !important; margin-left: 20px !important; font-size:12px;}
+    #small_menu{width: 140px !important; padding-left: 20px !important; font-size: 12px}
+    p.media_title{padding: 10px; font-size: 20px;}
+    p.media_ment1{padding: 10px; font-size: 17px; margin-top: 0px;}
+    .media_intro{font-size: 30px;}
+    .sub_media{margin-top: 50px;}
+    .sub_item1>.img{height: 200px;}
+    .sub_item2>.img{height: 200px;}
+    .sub_item3>.img{height: 200px;}
+    .sub_item4>.img{height: 200px;}
+    .sub_item5>.img{height: 200px;}
+    .sub_item6>.img{height: 200px;}
+    .sub_item7>.img{height: 200px;}
+    .sub_item8>.img{height: 200px;}
+    iframe{height: 350px;}
+    .scale>a>img{height: 200px;}
+    p.item_title{font-size: 17px;}
+    .sub_item1{margin-right: 1%; width: 49%;}
+    .sub_item2{margin-left: 1%; width: 49%;}
+    .sub_item3{margin-right: 1%; width: 49%;}
+    .sub_item4{margin-left: 1%; width: 49%;}
+    .sub_item5{margin-right: 1%; width: 49%;}
+    .sub_item6{margin-left: 1%; width: 49%;}
+    .sub_item7{margin-right: 1%; width: 49%;}
+    .sub_item8{margin-left: 1%; width: 49%;}
+    
+    
+#top{bottom: 45px !important; right: 25px !important;}
+.footer_m{display: none;}
+.footer_logo{display: none;} 
+#footer{width: 100% !important; text-align: center; padding: 10px;}
+footer{padding-top: 20px; width: 100% !important}
+.ex2{display: none;}
+address{margin-left: 0 !important; position: inherit !important; font-size: 14px !important; margin-top: 20px !important;}
+}
+        
+    </style>
+
+</head>
+<body>
+    <header></header>
+    
+    
+        <div id="keyimage">
+           <div class="media_intro">
+               <p>미디어</p>
+           </div>         
+        </div>
+   
+        <div class="quick">
+            <div class="quick-in">
+                <a href="index.html"><div class="home_button"></div></a>
+            </div>
+            
+            <select name="big" id="big_menu">
+                <option value="CONGCAFE">CONGCAFE</option>
+                <option value="COFFEE">COFFEE</option>
+                <option selected value="NEWS">NEWS</option>
+                <option value="STORE">STORE</option>
+                <option value="COMMUNITY">COMMUNITY</option>
+            </select>
+            
+            <select name="big" id="small_menu">
+                <option value="미디어">미디어</option>
+            </select>
+        </div>
+        
+        <section id="media">
+            <div class="media_con">
+                <div class="youtube">
+                    <iframe src="https://www.youtube.com/embed/AthSVSJ4GDk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <p class="media_title">눈길을 주는 곳마다 펼쳐지는 콩카페의 풍경</p>
+
+                <p class="media_ment1">
+                    <span class="media_subm">
+                       베트남의 독특한 맛과 감성, 문화를 커피에 담아<br>
+                       커피 한 모금에 피어나는 베트남에서의 추억들.
+                    </span>
+                    
+                    
+                    <span class="media_subm">
+                        은은하게 감도는 진한 커피향과 부드럽게 퍼져나가는 연유의 달콤함으로<br>
+                        움츠러든 몸과 마음을 달래보는 건 어떨까요 
+                    </span>
+
+                    <span class="media_subm">
+                        베트남의 옛 감성을 그대로 느낄 수 있는 빈티지 소품들,<br>
+                        콩카페에서 즐기는 색다른 커피 여행
+                    </span>
+
+                    <span class="media_subm">
+                        테이블에도,<br>
+                        루프탑에도,<br>
+                        시선이 닿는 곳마다<br>
+                        따뜻한 햇살이 내려앉은 이 곳은  콩카페입니다.
+                    </span>
+
+                </p>
+            </div>
+            <div class="back_color1"></div>
+            
+            <div class="sub_media">
+                <div class="sub_item1">
+                    <div class="img">
+                       <div class="scale">
+                           <a target="_blank" href="https://www.youtube.com/watch?v=fJ17ESaTvaE"><img src="images/media-item1.jpg" alt="Monncake 콜라보"></a>
+                       </div>
+                    </div>
+                    <p class="item_title">[ MOONCAKE ] x CONGCAPHE</p>
+                    <p class="item_ment">2019-10-10</p>
+                </div>
+                
+                <div class="sub_item2">
+                    <div class="img">
+                       <div class="scale">
+                           <a target="_blank" href="https://www.youtube.com/watch?v=mk24uycWo6k"><img src="images/media-item2.jpg" alt="코코넛 밀크 스무디"></a>
+                       </div>
+                    </div>
+                    <p class="item_title">COCONUT MILK SMOOTHIE</p>
+                    <p class="item_ment">2019-09-25</p>
+                </div>
+                
+                <div class="sub_item3">
+                    <div class="img">
+                       <div class="scale">
+                           <a target="_blank" href="https://www.youtube.com/watch?v=BN8pziV7UDw"><img src="images/media-item3.jpg" alt="곡물 커피 스무디"></a>
+                       </div>
+                    </div>
+                    <p class="item_title">YOGHURT W. COFFEE &amp; PURPLE STICKY RICE</p>
+                    <p class="item_ment">2019-09-01</p>
+                </div>
+                
+                <div class="sub_item4">
+                    <div class="img">
+                       <div class="scale">
+                           <a target="_blank" href="https://www.youtube.com/watch?v=7lmXVygq0Gs"><img src="images/media-item4.jpg" alt="생강차"></a>
+                       </div>
+                    </div>
+                    <p class="item_title">HOT CINNAMON TEA W. KUMQUAT</p>
+                    <p class="item_ment">2019-08-12</p>
+                </div>
+                      
+                <div class="item_hidden">
+                    <div class="sub_item5">
+                        <div class="img">
+                           <div class="scale">
+                               <a target="_blank" href="https://www.youtube.com/watch?v=hOScaK0uI2Y"><img src="images/media-item5.jpg" alt="코코넛 밀크 커피"></a>
+                           </div>
+                        </div>
+                        <p class="item_title">COFFEE W. COCONUT MILK </p>
+                        <p class="item_ment">2019-08-04</p>
+                    </div>
+                    
+                    <div class="sub_item6">
+                        <div class="img">
+                           <div class="scale">
+                               <a target="_blank" href="https://www.youtube.com/watch?v=MMCz4X7hNPA"><img src="images/media-item6.jpg" alt="콩카페 컬렉션"></a>
+                           </div>
+                        </div>
+                        <p class="item_title">LUNAR NEW YEAR AT Cộng</p>
+                        <p class="item_ment">2019-07-28</p>
+                    </div>
+                    
+                    <div class="sub_item7">
+                        <div class="img">
+                           <div class="scale">
+                               <a target="_blank" href="https://www.youtube.com/watch?v=BR3TbBXNmWI"><img src="images/media-item7.jpg" alt="베트남 아메리카노"></a>
+                           </div>
+                        </div>
+                        <p class="item_title">VIETNAMESE AMERICANO</p>
+                        <p class="item_ment">2019-06-09</p>
+                    </div>
+                    
+                    <div class="sub_item8">
+                        <div class="img">
+                           <div class="scale">
+                               <a target="_blank" href="https://www.youtube.com/watch?v=zgFt50hWjXE"><img src="images/media-item8.jpg" alt="신선한 우유 커피"></a>
+                           </div>
+                        </div>
+                        <p class="item_title">COFFEE W. FRESH MILK</p>
+                        <p class="item_ment">2019-05-05</p>
+                    </div>
+                </div>
+                
+                <div class="more">
+                    <p>더보기&nbsp;&nbsp;&nbsp;+</p>
+                </div>
+            </div>
+            <div class="back_color2"></div>
+        </section>
+
+
+    
+    <div id="top">
+        <img src="images/up-arrow.png" alt="" width="65px">
+    </div>
+    <footer></footer>
+</body>
+</html>
